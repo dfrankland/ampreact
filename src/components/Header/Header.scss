@@ -1,0 +1,68 @@
+@import '../variables.scss';
+
+$brand-color: #fff;
+
+.root {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::after {
+    z-index: -2;
+    background: url('./emoji.gif');
+    background-size: contain;
+  }
+  &::before {
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: $max-content-width;
+}
+
+.brand {
+  color: color($brand-color lightness(+10%));
+  text-decoration: none;
+  font-size: 1.75em; /* ~28px */
+}
+
+.brandTxt {
+  margin-left: 10px;
+}
+
+.nav {
+  float: right;
+  margin-top: 6px;
+}
+
+.banner {
+  text-align: center;
+}
+
+.bannerTitle {
+  margin: 0;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1em;
+}
+
+.bannerDesc {
+  padding: 0;
+  color: #fff;
+  font-size: 1.25em;
+  margin: 0;
+}

@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+.root {
+  background: #222;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: $max-content-width;
+  text-align: center;
+}
+
+.text {
+  color: #fff;
+}
+
+.text,
+.link {
+  padding: 2px 5px;
+  font-size: 1em;
+}
+
+.link,
+.link:active,
+.link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
