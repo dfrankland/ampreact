@@ -4,7 +4,7 @@ import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
 import content from './content';
 
-const getContextComponent = async (location, callback) => {
+const getContextComponent = async ({ location }, callback) => {
   const data = await content(location.pathname);
   callback(null, () => <ContentPage {...data} />);
 };
