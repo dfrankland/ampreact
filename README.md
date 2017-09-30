@@ -1,27 +1,43 @@
-# ⚡⚛ ampreact
-AMP HTML + React — The most trendy website boilerplate possible.
-
-## Getting Started
-#### 1. Get latest code
-```
-git clone https://github.com/dfrankland/ampreact.git
-```
-#### 2. Run `npm install`
-#### 3. Run `npm start`
-This command will build the app from the source files (`/src`) into the output
-`/build` folder. As soon as the initial build completes, it will start the
-Node.js server (`node build/server.js`) and [Browsersync](https://browsersync.io/) with on top of it.
-
-> [https://localhost:3000/](https://localhost:3000/) — Node.js server (`build/server.js`)<br>
-> [https://localhost:3001/](https://localhost:3001/) — BrowserSync proxy<br>
-> [http://localhost:3002/](http://localhost:3002/) — BrowserSync control panel (UI)<br>
+# ampreact
+⚡⚛ [AMP HTML][amp], [Next.js][next], [React][react], [`styled-components`][styled]
+— The most trendy website boilerplate possible.
 
 ## About
-* **Content**: Utilizes Webpack, React, Jade/Markdown, and PostCSS to dynamically create AMP HTML pages.
-* **Server**: HTTP/2 with Koa for super minimal and performant serving.
-* **Development**: Browsersync for speedy development and linting rules setup for organization.
 
-## More Documentation to Come...
+The core of `ampreact` is built on [Next.js][next], used for all the routing and
+serving of pages. For styling, [`styled-components`][styled] makes it easy—with
+just a small modification to the rendering of the `<style />` tags generated,
+it works nicely with [AMP HTML][amp]. Finally, [`react-amphtml`][react-amphtml]
+is used for rendering all of the [AMP HTML][amp] built-ins, extensions, and
+the `<script />` tags needed to use them.
 
-## Attribution
-Based on the brilliant [`react-starter-kit`](https://github.com/kriasoft/react-starter-kit/)
+The pages generated should all by properly validated by [AMP HTML][amp] 💯
+
+## Usage
+
+All the usage and benefits of [Next.js][next] are available to `ampreact`.
+
+*   Installation:
+
+    ```bash
+    npm install
+    ```
+
+*   Development:
+
+    ```bash
+    npm run dev
+    ```
+
+*   Production:
+
+    ```bash
+    npm run build
+    npm run start
+    ```
+
+[amp]: https://github.com/ampproject/amphtml/
+[next]: https://github.com/zeit/next.js/
+[react]: https://github.com/facebook/react/
+[styled]: https://github.com/styled-components/styled-components/
+[react-amphtml]: https://github.com/dfrankland/react-amphtml/
