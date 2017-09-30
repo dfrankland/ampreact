@@ -1,88 +1,53 @@
 {
   "private": true,
-  "engines": {
-    "node": ">=5.0 <6",
-    "npm": ">=3.3 <4"
-  },
+  "name": "ampreact",
+  "version": "1.0.0",
+  "description": "⚡⚛ AMP HTML + React — The most trendy website boilerplate possible.",
+  "main": "",
   "scripts": {
-    "eslint": "eslint src tools",
-    "jscs": "jscs src tools --verbose",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "lint": "npm run eslint && npm run jscs && npm run stylelint",
-    "build": "babel-node tools/run build",
-    "start": "babel-node tools/run start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint -c ./package.json ./pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfrankland/ampreact.git"
+  },
+  "keywords": [
+    "amp",
+    "react",
+    "trendy"
+  ],
+  "author": "Dylan Frankland <dylan@frankland.io> (http://dylan.frankland.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfrankland/ampreact/issues"
+  },
+  "homepage": "https://github.com/dfrankland/ampreact#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.3.14",
-    "classnames": "^2.2.3",
-    "fbjs": "^0.8.0-alpha.3",
-    "front-matter": "^2.0.6",
-    "jade": "^1.11.0",
-    "koa": "^2.0.0",
-    "koa-compress": "^2.0.0",
-    "koa-helmet": "^2.0.0-alpha.1",
-    "markdown-it": "^6.0.0",
-    "pretty-error": "^2.0.0",
-    "purify-css": "^1.1.9",
-    "react": "^0.14.7",
-    "react-amphtml": "^1.0.2",
-    "react-dom": "^0.14.7",
-    "react-router": "^2.0.1",
-    "serve-static": "^1.10.2",
-    "source-map-support": "^0.4.0",
-    "spdy": "^3.2.3"
+    "next": "^3.2.2",
+    "react": "^15.6.2",
+    "react-amphtml": "^2.0.0",
+    "react-dom": "^15.6.2"
   },
-  "devDependencies": {
-    "autoprefixer": "^6.3.1",
-    "babel-cli": "^6.6.5",
-    "babel-eslint": "^6.0.0",
-    "babel-loader": "^6.2.1",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-node5": "^11.0.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.3.13",
-    "bluebird": "^3.2.2",
-    "browser-sync": "^2.11.1",
-    "css-loader": "^0.23.1",
-    "del": "^2.2.0",
-    "eslint": "^2.5.1",
-    "eslint-config-airbnb": "^6.1.0",
-    "eslint-loader": "^1.3.0",
-    "eslint-plugin-react": "^4.2.3",
-    "file-loader": "^0.8.5",
-    "gaze": "^1.0.0",
-    "image-webpack-loader": "^1.6.3",
-    "isomorphic-style-loader": "0.0.12",
-    "jade-loader": "^0.8.0",
-    "jscs": "^2.11.0",
-    "json-loader": "^0.5.4",
-    "mkdirp": "^0.5.1",
-    "ncp": "^2.0.0",
-    "postcss": "^5.0.19",
-    "postcss-import": "^8.0.2",
-    "postcss-loader": "^0.8.2",
-    "postcss-scss": "^0.1.7",
-    "precss": "^1.4.0",
-    "raw-loader": "^0.5.1",
-    "react-svg-loader": "^0.1.0",
-    "style-loader": "^0.13.0",
-    "stylelint": "^5.1.0",
-    "stylelint-config-standard": "^4.0.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.12.11"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "node5",
-      "stage-0"
-    ]
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
     "rules": {
-      "string-quotes": "single",
-      "function-url-quotes": "single"
+      "react/jsx-filename-extension": "off"
     }
   }
 }
