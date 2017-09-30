@@ -12,7 +12,7 @@ const Container = styled.div`
 export default () => (
   <Container>
     <Head>
-      <title>react-amphtml | Hello, World!</title>
+      <title>ampreact | Hello, World!</title>
     </Head>
     <h1>Hello, World!</h1>
     <Amp.Carousel
