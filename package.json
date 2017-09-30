@@ -27,6 +27,7 @@
   "homepage": "https://github.com/dfrankland/ampreact#readme",
   "devDependencies": {
     "babel-eslint": "^8.0.1",
+    "babel-plugin-styled-components": "^1.2.0",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^15.1.0",
@@ -38,7 +39,8 @@
     "next": "^3.2.2",
     "react": "^15.6.2",
     "react-amphtml": "^2.0.0",
-    "react-dom": "^15.6.2"
+    "react-dom": "^15.6.2",
+    "styled-components": "^2.2.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
