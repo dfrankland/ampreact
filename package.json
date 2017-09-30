@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ampreact",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "⚡⚛ AMP HTML + React — The most trendy website boilerplate possible.",
   "main": "",
   "scripts": {
