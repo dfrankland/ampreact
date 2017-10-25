@@ -57,11 +57,23 @@ export default class MyDocument extends Document {
       <title>ampreact</title>
     );
 
-    return { ...page, title, url: req.url, ampScriptTags, ampStyleTag };
+    return {
+      ...page,
+      title,
+      url: req.url,
+      ampScriptTags,
+      ampStyleTag,
+    };
   }
 
   render() {
-    const { title, url, ampScriptTags, ampStyleTag, html } = this.props;
+    const {
+      title,
+      url,
+      ampScriptTags,
+      ampStyleTag,
+      html,
+    } = this.props;
 
     /* eslint-disable react/no-danger */
     return (
