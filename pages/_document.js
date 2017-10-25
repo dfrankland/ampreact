@@ -4,13 +4,8 @@ import {
   AmpScripts,
   AmpScriptsManager,
   headerBoilerplate,
-  whitelist,
 } from 'react-amphtml';
 import { ServerStyleSheet } from 'styled-components';
-
-// This is only needed for react@<16.0.0 & react-dom@<16.0.0
-// Whitelists the `amp-` and `custom-elements` attributes
-whitelist();
 
 export default class MyDocument extends Document {
   static getInitialProps({ req, renderPage }) {
