@@ -38,16 +38,13 @@ All the usage and benefits of [Next.js][next] are available to `ampreact`.
 
 ## Example & Validation
 
-An example of `ampreact` can be seen here: <https://ampreact-hgiujbibql.now.sh/>
+An example of `ampreact` can be seen here: <https://ampreact-bngtmyroix.now.sh/>
 
 ### For proof of validation, either:
 
 1.  Append `#development=1` to the URL and check the console for errors
 
-2.  Paste the page HTML into <https://validator.ampproject.org/>
-
-3.  Go to Google's AMP validation page:
-    <https://search.google.com/test/amp?&id=CxFbIVoogAvY3ET1NWDAcg>
+2.  Paste the page HTML into <https://validator.ampproject.org/#url=https%3A%2F%2Fampreact-bngtmyroix.now.sh%2F>
 
 ## Deployment
 
