@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Amp } from 'react-amphtml';
 import styled from 'styled-components';
+import * as Amp from 'react-amphtml';
+import * as AmpHelpers from 'react-amphtml/helpers';
 
 const Container = styled.div`
   max-width: 70rem;
@@ -9,7 +10,7 @@ const Container = styled.div`
   padding: 0 1rem;
 `;
 
-const StyledAmpImg = styled(Amp.Img)`
+const StyledAmpImg = styled(Amp.AmpImg)`
   filter: ${(props) => {
     switch (props['data-filter']) {
       case 1:
@@ -30,6 +31,11 @@ const StyledAmpImg = styled(Amp.Img)`
   }};
 `;
 
+const RelativeAmpList = styled(Amp.AmpList)`
+  position: relative;
+  min-height: 2rem;
+`;
+
 const defaultHeading = {
   text: 'Hello, World!',
 };
@@ -40,44 +46,47 @@ export default () => (
       <title>ampreact | Hello, World!</title>
     </Head>
 
-    <Amp.State id="heading">{defaultHeading}</Amp.State>
-    <Amp.Bind text="heading.text">
-      <h1>{defaultHeading.text}</h1>
-    </Amp.Bind>
-
+    <Amp.AmpState specName="amp-state" id="heading">
+      {defaultHeading}
+    </Amp.AmpState>
+    <AmpHelpers.Bind text="heading.text">
+      {props => <h1 {...props}>{defaultHeading.text}</h1>}
+    </AmpHelpers.Bind>
 
     <p>
       <label htmlFor="headingInputElement">
         <p><b>Type your heading:</b></p>
-        <Amp.State id="headingInput">{defaultHeading}</Amp.State>
-        <Amp.Action
+        <Amp.AmpState specName="amp-state" id="headingInput">
+          {defaultHeading}
+        </Amp.AmpState>
+        <AmpHelpers.Action
           events={{
             change: ['AMP.setState({ headingInput: { text: event.value } })'],
           }}
         >
-          <input type="text" id="headingInputElement" />
-        </Amp.Action>
+          {props => <input {...props} type="text" id="headingInputElement" />}
+        </AmpHelpers.Action>
       </label>
-      <Amp.Action
+      <AmpHelpers.Action
         events={{
           tap: ['AMP.setState({ heading: { text: headingInput.text } })'],
         }}
       >
-        <button>Set Heading</button>
-      </Amp.Action>
+        {props => <button {...props}>Set Heading</button>}
+      </AmpHelpers.Action>
     </p>
 
     <p>
-      <Amp.Action
+      <AmpHelpers.Action
         events={{
           tap: ['awesome-carousel.toggleVisibility'],
         }}
       >
-        <button>Toggle Carousel Visibility</button>
-      </Amp.Action>
+        {props => <button {...props}>Toggle Carousel Visibility</button>}
+      </AmpHelpers.Action>
     </p>
 
-    <Amp.Carousel
+    <Amp.AmpCarousel
       id="awesome-carousel"
       height="610"
       layout="fixed-height"
@@ -85,6 +94,8 @@ export default () => (
     >
       {[...Array(6)].map((v, index) => (
         <StyledAmpImg
+          specName="default"
+          key={Buffer.from(Math.random().toString()).toString('base64')}
           data-filter={index}
           src="/static/amp.jpg"
           width="1080"
@@ -92,6 +103,41 @@ export default () => (
           alt="AMP"
         />
       ))}
-    </Amp.Carousel>
+    </Amp.AmpCarousel>
+
+    <h1>Hacker News</h1>
+    <RelativeAmpList
+      specName="default"
+      src={(
+        `https://www.graphqlhub.com/graphql?query=${
+          encodeURIComponent(`
+            {
+              hn {
+                topStories {
+                  id
+                  title
+                  score
+                  descendants
+                }
+              }
+            }
+          `)
+        }`
+      )}
+      items="data.hn.topStories"
+      layout="fill"
+    >
+      <Amp.Template specName="default" type="amp-mustache">
+        <div>
+          <a
+            href="https://news.ycombinator.com/item?id={{id}}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {'{{title}} ⭐ {{score}} 💬 {{descendants}}'}
+          </a>
+        </div>
+      </Amp.Template>
+    </RelativeAmpList>
   </Container>
 );
