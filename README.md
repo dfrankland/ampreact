@@ -1,6 +1,7 @@
 # ampreact
-⚡⚛ [AMP HTML][amp], [Next.js][next], [React][react], [`styled-components`][styled]
-— The most trendy website boilerplate possible.
+⚡⚛ [AMP HTML][amp], [Next.js][next], [React][react],
+[styled-components][styled], [GraphQL][graphql] — The most trendy website boilerplate
+possible.
 
 ## About
 
@@ -38,13 +39,13 @@ All the usage and benefits of [Next.js][next] are available to `ampreact`.
 
 ## Example & Validation
 
-An example of `ampreact` can be seen here: <https://ampreact-bngtmyroix.now.sh/>
+An example of `ampreact` can be seen here: <https://ampreact-szogszfmrw.now.sh/>
 
 ### For proof of validation, either:
 
 1.  Append `#development=1` to the URL and check the console for errors
 
-2.  Paste the page HTML into <https://validator.ampproject.org/#url=https%3A%2F%2Fampreact-bngtmyroix.now.sh%2F>
+2.  Paste the page HTML into <https://validator.ampproject.org/#url=https%3A%2F%2Fampreact-szogszfmrw.now.sh%2F>
 
 ## Deployment
 
@@ -57,6 +58,7 @@ Because `ampreact` is built on top of [Next.js][next] it is simple to deploy to
 [next]: https://github.com/zeit/next.js/
 [react]: https://github.com/facebook/react/
 [styled]: https://github.com/styled-components/styled-components/
+[graphql]: https://github.com/graphql/graphql-js
 [react-amphtml]: https://github.com/dfrankland/react-amphtml/
 [now]: https://zeit.co/now/
 [now deploy badge]: https://deploy.now.sh/static/button.svg
