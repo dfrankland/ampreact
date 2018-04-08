@@ -1,0 +1,29 @@
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.10.0
+    working_directory: ~/ampreact
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore node_modules cache
+          keys:
+            - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v1-node-{{ arch }}-{{ .Branch }}-
+            - v1-node-{{ arch }}-
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Lint
+          command: npm run lint
+      - save_cache:
+          name: Save node_modules cache
+          key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
