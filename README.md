@@ -40,13 +40,13 @@ All the usage and benefits of [Next.js][] are available to `ampreact`.
 
 ## Example & Validation
 
-An example of `ampreact` can be seen here: <https://ampreact-szogszfmrw.now.sh/>
+An example of `ampreact` can be seen here: <https://ampreact.dfrankland.now.sh/>
 
 ### For proof of validation, either:
 
 1.  Append `#development=1` to the URL and check the console for errors
 
-2.  Paste the page HTML into <https://validator.ampproject.org/#url=https%3A%2F%2Fampreact-szogszfmrw.now.sh%2F>
+2.  Paste the page HTML into <https://validator.ampproject.org/#url=https%3A%2F%2Fampreact.dfrankland.now.sh%2F>
 
 ## Deployment
 
