@@ -1,14 +1,16 @@
 {
   "private": true,
   "name": "ampreact",
-  "version": "2.1.0",
+  "version": "4.0.0",
   "description": "⚡⚛ AMP HTML + React — The most trendy website boilerplate possible.",
   "main": "",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint -c ./package.json ./pages"
+    "lint": "eslint --ext .ts --ext .tsx --ext .js .",
+    "format": "prettier --write '**/*.js' '**/*.jsx' '**/*.ts' '**/*.tsx' '**/*.md'",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "repository": {
     "type": "git",
@@ -26,30 +28,30 @@
   },
   "homepage": "https://github.com/dfrankland/ampreact#readme",
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "babel-plugin-styled-components": "^1.5.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.16",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-styled-components": "^1.10.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
   },
   "dependencies": {
-    "next": "^5.1.0",
-    "react": "^16.3.1",
-    "react-amphtml": "^3.0.0",
-    "react-dom": "^16.3.1",
-    "styled-components": "^3.2.5"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "react/jsx-filename-extension": "off"
-    }
+    "next": "^8.1.1-canary.63",
+    "next-server": "^8.1.1-canary.63",
+    "react": "^16.8.6",
+    "react-amphtml": "^4.0.0",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   }
 }

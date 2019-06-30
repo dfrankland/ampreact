@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import * as Amp from 'react-amphtml';
@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const StyledAmpImg = styled(Amp.AmpImg)`
-  filter: ${(props) => {
+  filter: ${(props): string => {
     switch (props['data-filter']) {
       case 1:
         return 'blur(10px)';
@@ -40,7 +40,7 @@ const defaultHeading = {
   text: 'Hello, World!',
 };
 
-export default () => (
+export default (): ReactElement => (
   <Container>
     <Head>
       <title>ampreact | Hello, World!</title>
@@ -50,12 +50,14 @@ export default () => (
       {defaultHeading}
     </Amp.AmpState>
     <AmpHelpers.Bind text="heading.text">
-      {props => <h1 {...props}>{defaultHeading.text}</h1>}
+      {(props): ReactElement => <h1 {...props}>{defaultHeading.text}</h1>}
     </AmpHelpers.Bind>
 
     <p>
       <label htmlFor="headingInputElement">
-        <p><b>Type your heading:</b></p>
+        <p>
+          <b>Type your heading:</b>
+        </p>
         <Amp.AmpState specName="amp-state" id="headingInput">
           {defaultHeading}
         </Amp.AmpState>
@@ -64,7 +66,9 @@ export default () => (
             change: ['AMP.setState({ headingInput: { text: event.value } })'],
           }}
         >
-          {props => <input {...props} type="text" id="headingInputElement" />}
+          {(props): ReactElement => (
+            <input {...props} type="text" id="headingInputElement" />
+          )}
         </AmpHelpers.Action>
       </label>
       <AmpHelpers.Action
@@ -72,7 +76,11 @@ export default () => (
           tap: ['AMP.setState({ heading: { text: headingInput.text } })'],
         }}
       >
-        {props => <button {...props}>Set Heading</button>}
+        {(props): ReactElement => (
+          <button type="button" {...props}>
+            Set Heading
+          </button>
+        )}
       </AmpHelpers.Action>
     </p>
 
@@ -82,35 +90,40 @@ export default () => (
           tap: ['awesome-carousel.toggleVisibility'],
         }}
       >
-        {props => <button {...props}>Toggle Carousel Visibility</button>}
+        {(props): ReactElement => (
+          <button type="button" {...props}>
+            Toggle Carousel Visibility
+          </button>
+        )}
       </AmpHelpers.Action>
     </p>
 
     <Amp.AmpCarousel
+      specName="AMP-CAROUSEL [type=carousel]"
       id="awesome-carousel"
       height="610"
       layout="fixed-height"
       type="carousel"
     >
-      {[...Array(6)].map((v, index) => (
-        <StyledAmpImg
-          specName="default"
-          key={Buffer.from(Math.random().toString()).toString('base64')}
-          data-filter={index}
-          src="/static/amp.jpg"
-          width="1080"
-          height="610"
-          alt="AMP"
-        />
-      ))}
+      {[...Array(6)].map(
+        (_, index): ReactElement => (
+          <StyledAmpImg
+            specName="default"
+            key={Buffer.from(Math.random().toString()).toString('base64')}
+            data-filter={index}
+            src="/static/amp.jpg"
+            width="1080"
+            height="610"
+            alt="AMP"
+          />
+        ),
+      )}
     </Amp.AmpCarousel>
 
     <h1>Hacker News</h1>
     <RelativeAmpList
       specName="default"
-      src={(
-        `https://www.graphqlhub.com/graphql?query=${
-          encodeURIComponent(`
+      src={`https://www.graphqlhub.com/graphql?query=${encodeURIComponent(`
             {
               hn {
                 topStories {
@@ -121,9 +134,7 @@ export default () => (
                 }
               }
             }
-          `)
-        }`
-      )}
+          `)}`}
       items="data.hn.topStories"
       layout="fill"
     >

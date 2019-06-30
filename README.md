@@ -1,22 +1,23 @@
 # ampreact
-⚡⚛ [AMP HTML][amp], [Next.js][next], [React][react],
-[styled-components][styled], [GraphQL][graphql] — The most trendy website boilerplate
-possible.
+⚡⚛ [AMP HTML][], [Next.js][], [React][], [styled-components][], [GraphQL][],
+and [TypeScript][] — The most trendy website boilerplate possible.
 
 ## About
 
-The core of `ampreact` is built on [Next.js][next], used for all the routing and
-serving of pages. For styling, [`styled-components`][styled] makes it easy—with
+The core of `ampreact` is built on [Next.js][], used for all the routing and
+serving of pages. For styling, [styled-components][] makes it easy—with
 just a small modification to the rendering of the `<style />` tags generated,
-it works nicely with [AMP HTML][amp]. Finally, [`react-amphtml`][react-amphtml]
-is used for rendering all of the [AMP HTML][amp] built-ins, extensions, and
+it works nicely with [AMP HTML][]. Finally, [`react-amphtml`][]
+is used for rendering all of the [AMP HTML][] built-ins, extensions, and
 the `<script />` tags needed to use them.
 
-The pages generated should all by properly validated by [AMP HTML][amp] 💯
+[`react-amphtml`]: https://github.com/dfrankland/react-amphtml/
+
+The pages generated should all by properly validated by [AMP HTML][] 💯
 
 ## Usage
 
-All the usage and benefits of [Next.js][next] are available to `ampreact`.
+All the usage and benefits of [Next.js][] are available to `ampreact`.
 
 *   Installation:
 
@@ -49,17 +50,18 @@ An example of `ampreact` can be seen here: <https://ampreact-szogszfmrw.now.sh/>
 
 ## Deployment
 
-Because `ampreact` is built on top of [Next.js][next] it is simple to deploy to
-[Now][now] or any other cloud infrastructure providers.
+Because `ampreact` is built on top of [Next.js][] it is simple to deploy to
+[Now][] or any other cloud infrastructure providers.
 
-[![Deploy to now][now deploy badge]][now deploy ampreact]
+[![Deploy to now][]][now deploy ampreact]
 
-[amp]: https://github.com/ampproject/amphtml/
-[next]: https://github.com/zeit/next.js/
-[react]: https://github.com/facebook/react/
-[styled]: https://github.com/styled-components/styled-components/
-[graphql]: https://github.com/graphql/graphql-js
-[react-amphtml]: https://github.com/dfrankland/react-amphtml/
-[now]: https://zeit.co/now/
-[now deploy badge]: https://deploy.now.sh/static/button.svg
+[Now]: https://zeit.co/now/
+[Deploy to now]: https://deploy.now.sh/static/button.svg
 [now deploy ampreact]: https://deploy.now.sh/?repo=https://github.com/dfrankland/ampreact
+
+[AMP HTML]: https://github.com/ampproject/amphtml/
+[Next.js]: https://github.com/zeit/next.js/
+[React]: https://github.com/facebook/react/
+[styled-components]: https://github.com/styled-components/styled-components/
+[GraphQL]: https://github.com/graphql/graphql-js
+[TypeScript]: https://github.com/microsoft/TypeScript
