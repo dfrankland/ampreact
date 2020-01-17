@@ -44,7 +44,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "prettier": "^1.18.2",
-    "typescript": "^3.5.2"
+    "typescript": "^3.7.5"
   },
   "dependencies": {
     "next": "^8.1.1-canary.63",
