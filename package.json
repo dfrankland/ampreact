@@ -47,7 +47,7 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
-    "next": "^8.1.1-canary.63",
+    "next": "^9.3.0",
     "next-server": "^8.1.1-canary.63",
     "react": "^16.8.6",
     "react-amphtml": "^4.0.2",
