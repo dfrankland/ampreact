@@ -29,7 +29,7 @@
   "homepage": "https://github.com/dfrankland/ampreact#readme",
   "devDependencies": {
     "@types/node": "^12.0.10",
-    "@types/react": "^16.8.22",
+    "@types/react": "^17.0.2",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.16",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
